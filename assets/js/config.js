@@ -8,7 +8,7 @@ angular.module('app')
 
         function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
             $urlRouterProvider
-                .otherwise('/app/dashboard');
+                .otherwise('/app/dashboard2');
 
             $stateProvider
                 .state('app', {
@@ -16,32 +16,52 @@ angular.module('app')
                     url: "/app",
                     templateUrl: "tpl/app.html"
                 })
-                .state('app.dashboard', {
-                    url: "/dashboard",
-                    templateUrl: "tpl/dashboard.html",
-                    controller: 'DashboardCtrl',
+                .state('app.dashboard2', {
+                    url: "/dashboard2",
+                    templateUrl: "tpl/dashboard2.html",
+                    controller: 'Dashboard2Ctrl',
                     resolve: {
                         deps: ['$ocLazyLoad', function($ocLazyLoad) {
                             return $ocLazyLoad.load([
-                                    'nvd3',
-                                    'mapplic',
-                                    'rickshaw',
-                                    'metrojs',
-                                    'sparkline',
-                                    'skycons',
-                                    'switchery',
+                                    'basestyle',
                                     'echarts'
                                 ], {
                                     insertBefore: '#lazyload_placeholder'
                                 })
                                 .then(function() {
                                     return $ocLazyLoad.load([
-                                        'assets/js/controllers/dashboard.js'
+                                        'assets/js/controllers/dashboard2.js'
                                     ]);
                                 });
                         }]
                     }
                 })
+                // .state('app.dashboard', {
+                //     url: "/dashboard",
+                //     templateUrl: "tpl/dashboard.html",
+                //     controller: 'DashboardCtrl',
+                //     resolve: {
+                //         deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                //             return $ocLazyLoad.load([
+                //                     'nvd3',
+                //                     'mapplic',
+                //                     'rickshaw',
+                //                     'metrojs',
+                //                     'sparkline',
+                //                     'skycons',
+                //                     'switchery',
+                //                     'echarts'
+                //                 ], {
+                //                     insertBefore: '#lazyload_placeholder'
+                //                 })
+                //                 .then(function() {
+                //                     return $ocLazyLoad.load([
+                //                         'assets/js/controllers/dashboard.js'
+                //                     ]);
+                //                 });
+                //         }]
+                //     }
+                // })
 
             // Email app
             .state('app.email', {

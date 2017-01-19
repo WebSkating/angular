@@ -261,6 +261,11 @@ angular.module('app')
                         'assets/plugins/angular-typehead/angular-typeahead.min.js'
                     ]
                 },{
+                  name: 'basestyle',
+                  files: [
+                        'assets/css/style.css'
+                  ]  
+                },{
                   name: 'echarts',
                   files: [
                         'assets/plugins/echarts/echarts.min.js'

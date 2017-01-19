@@ -3,3 +3,31 @@
 * Override Pages default styles or create your own styles here
 
 */
+.fl{float:left;}
+.fr{float:right;}
+
+.info-card{width:270px;}
+.card-inner{padding:20px 33px;overflow: hidden;}
+
+.th-error {background-color: #ec4758;}
+.th-warn {background-color: #f9ac51;}
+.th-urgent {background-color: #7264bd;}
+.th-serious {background-color: #21b9bb;}
+
+.error-icon{width:52px;height:52px;display: inline-block;background: url(../img/dashboard/error.png) no-repeat center center;}
+.warn-icon{width:52px;height:52px;display: inline-block;background: url(../img/dashboard/warn.png) no-repeat center center;}
+.urgent-icon{width:52px;height:52px;display: inline-block;background: url(../img/dashboard/urgent.png) no-repeat center center;}
+.serious-icon{width:52px;height:52px;display: inline-block;background: url(../img/dashboard/serious.png) no-repeat center center;}
+
+.th-error .mo-color-error{background-color: #e6323d;}
+.th-warn .mo-color-warn{background-color: #f79339;}
+.th-urgent .mo-color-urgent{background-color: #5046a9;}
+.th-serious .mo-color-serious{background-color: #17a4a6;}
+
+
+.warn-detail{width:40px;}
+.warn-num{width:40px;font-size: 34px;line-height:34px;color:#ffffff;font-weight: 500;text-align: center;}
+.warn-type{width:40px;font-size: 16px;line-height:16px;color:#ffffff;font-weight: 500;margin-top: 2px;text-align: center;}
+.more-inner{padding:7px 15px;display:flex;justify-content: space-between;align-items: center;}
+.more-inner span{color:#ffffff;font-weight: 500;}
+.more-inner i{width:11px;height:13px;background: url(../img/dashboard/more-arrow.png) no-repeat center center;}
