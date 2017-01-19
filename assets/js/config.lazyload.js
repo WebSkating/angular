@@ -260,6 +260,11 @@ angular.module('app')
                         'assets/plugins/bootstrap-typehead/bloodhound.min.js',
                         'assets/plugins/angular-typehead/angular-typeahead.min.js'
                     ]
+                },{
+                  name: 'echarts',
+                  files: [
+                        'assets/plugins/echarts/echarts.min.js'
+                  ]  
                 }
 
             ]

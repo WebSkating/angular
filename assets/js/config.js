@@ -29,7 +29,8 @@ angular.module('app')
                                     'metrojs',
                                     'sparkline',
                                     'skycons',
-                                    'switchery'
+                                    'switchery',
+                                    'echarts'
                                 ], {
                                     insertBefore: '#lazyload_placeholder'
                                 })
