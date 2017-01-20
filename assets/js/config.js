@@ -49,8 +49,7 @@ angular.module('app')
                 //                     'metrojs',
                 //                     'sparkline',
                 //                     'skycons',
-                //                     'switchery',
-                //                     'echarts'
+                //                     'switchery'
                 //                 ], {
                 //                     insertBefore: '#lazyload_placeholder'
                 //                 })
