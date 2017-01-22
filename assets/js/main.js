@@ -11,7 +11,7 @@ angular.module('app')
             name: 'Pages',
             description: 'Admin Dashboard UI kit',
             layout: {
-                menuPin: false,
+                menuPin: true,
                 menuBehind: false,
                 theme: 'pages/css/pages.css'
             },
