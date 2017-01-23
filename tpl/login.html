@@ -6,9 +6,24 @@
 	<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
 	<link rel="stylesheet" type="text/css" href="../assets/plugins/swiper/swiper.min.css">
 	<style type="text/css">
-		.swiper-container {
+		.swiper-wrapper {
+			padding-left: 30px;
+			padding-right: 30px;
+			padding-bottom: 50px;
 	        width: 530px;
 	        height: 306px;
+		}
+		.swiper-slide{
+			width: 530px;
+			height: 306px;
+		}
+		/*其他颜色需更改css样式 00d2c4 */
+
+		.swiper-button-prev{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%2300d2c4'%2F%3E%3C%2Fsvg%3E");}
+		.swiper-button-next{background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%2300d2c4'%2F%3E%3C%2Fsvg%3E");transform: rotate(180deg);}
+		.swiper-pagination-bullet-active {
+		    opacity: 1;
+		    background: #00d2c4;
 		}
 	</style>
 </head>
@@ -20,12 +35,12 @@
 	</div>
 	<div class="login-content m-t-60">
 		<div class="content-wrap">
-			<div class="fl content-left">
+			<div class="fl">
 				<div class="swiper-container">
 				    <div class="swiper-wrapper">
-				        <div class="swiper-slide content-left"><img src="../assets/img/login/login_img1.png" alt=""></div>
-				        <div class="swiper-slide content-left"><img src="../assets/img/login/login_img2.png" alt=""></div>
-				        <div class="swiper-slide content-left"><img src="../assets/img/login/login_img3.png" alt=""></div>
+				        <div class="swiper-slide"><img src="../assets/img/login/login_img1.png" alt=""></div>
+				        <div class="swiper-slide"><img src="../assets/img/login/login_img2.png" alt=""></div>
+				        <div class="swiper-slide"><img src="../assets/img/login/login_img3.png" alt=""></div>
 				    </div>
 				    <!-- Add Pagination -->
 				    <div class="swiper-pagination"></div>
@@ -63,7 +78,7 @@
 	    paginationClickable: true,
 	    spaceBetween: 30,
 	    centeredSlides: true,
-	    autoplay: 2500,
+	    autoplay: 4000,
 	    autoplayDisableOnInteraction: false
 	});
 </script>
