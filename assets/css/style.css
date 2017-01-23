@@ -34,7 +34,7 @@
 .formWrap h1{margin:0 ;padding:0;font-family: "PingFang SC";padding-left:20px;height: 50px;line-height:50px;background-color: #00d2c4;color: #fcffff;font-size: 22px;font-weight: 400;
 border-top-left-radius: 5px;border-top-right-radius: 5px;}
 .input-wrap{padding: 0 33px;}
-.login-input{margin:0;padding:0;width:295px;height:40px;border:1px solid #dddddd;border-radius: 5px;padding-left: 20px;font-size: 14px;}
+.login-input{margin:0;padding:0;width:295px;height:40px;border:1px solid #dddddd;border-radius: 5px;padding-left: 20px;font-size: 14px;outline: none;}
 .loginBtn{display: inline-block;width:100%;height:50px;border-radius:5px;line-height:50px;background-color: #00d2c4;color:#fcffff;text-decoration: none;outline: none;font-size: 24px;text-align: center;}
 .foot-link{text-decoration: none;outline: none;color:#00d2c4;}
 /*LOGIN CSS STYLE END*/
