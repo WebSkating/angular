@@ -51,4 +51,14 @@ angular.module('app')
     	    }]
     	};
     	myChart.setOption(option);
+        $scope.refreshTest = function(portlet) {
+            console.log("Refreshing...");
+            // Timeout to simulate AJAX response delay
+            $timeout(function() {
+                $(portlet).portlet({
+                    refresh: false
+                });
+            }, 2000);
+
+        }
     }]);

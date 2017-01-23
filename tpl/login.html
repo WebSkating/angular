@@ -3,7 +3,14 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
-	<link rel="stylesheet" href="../assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="../assets/plugins/swiper/swiper.min.css">
+	<style type="text/css">
+		.swiper-container {
+	        width: 530px;
+	        height: 306px;
+		}
+	</style>
 </head>
 <body>
 	<div class="login-header m-t-100">
@@ -13,7 +20,22 @@
 	</div>
 	<div class="login-content m-t-60">
 		<div class="content-wrap">
-			<div class="fl content-left"><img src="../assets/img/login/login_img1.png" alt=""></div>
+			<div class="fl content-left">
+				<div class="swiper-container">
+				    <div class="swiper-wrapper">
+				        <div class="swiper-slide content-left"><img src="../assets/img/login/login_img1.png" alt=""></div>
+				        <div class="swiper-slide content-left"><img src="../assets/img/login/login_img2.png" alt=""></div>
+				        <div class="swiper-slide content-left"><img src="../assets/img/login/login_img3.png" alt=""></div>
+				    </div>
+				    <!-- Add Pagination -->
+				    <div class="swiper-pagination"></div>
+				    <!-- Add Arrows -->
+				    <div class="swiper-button-next"></div>
+				    <div class="swiper-button-prev"></div>
+				</div>
+			</div>
+
+			<!-- <div class="fl content-left"><img src="../assets/img/login/login_img1.png" alt=""></div> -->
 			<div class="fr content-right">
 				<form class="" action="">
 				<div class="formWrap">
@@ -32,4 +54,17 @@
 		</div>
 	</div>
 </body>
+<script type="text/javascript" src="../assets/plugins/swiper/swiper.min.js"></script>
+<script>
+	var swiper = new Swiper('.swiper-container', {
+	    pagination: '.swiper-pagination',
+	    nextButton: '.swiper-button-next',
+	    prevButton: '.swiper-button-prev',
+	    paginationClickable: true,
+	    spaceBetween: 30,
+	    centeredSlides: true,
+	    autoplay: 2500,
+	    autoplayDisableOnInteraction: false
+	});
+</script>
 </html>
