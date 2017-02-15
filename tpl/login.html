@@ -1,40 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-	<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
-	<link rel="stylesheet" type="text/css" href="../assets/plugins/swiper/swiper.min.css">
-	<style type="text/css">
-		.swiper-wrapper {
-			padding-left: 50px;
-			padding-right: 50px;
-			padding-bottom: 80px;
-	        width: 530px;
-	        height: 306px;
-		}
-		.swiper-slide{
-			width: 530px;
-			height: 306px;
-		}
-		.swiper-slide img{
-			width:530px;
-			height:auto;
-		}
-		/*其他颜色需更改css样式 00d2c4 */
-
-		.swiper-button-prev{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%2300d2c4'%2F%3E%3C%2Fsvg%3E");}
-		.swiper-button-next{background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%2300d2c4'%2F%3E%3C%2Fsvg%3E");transform: rotate(180deg);}
-		.swiper-pagination-bullet-active {
-		    opacity: 1;
-		    background: #00d2c4;
-		}
-	</style>
-</head>
-<body>
-	<div class="login-header m-t-100">
+<div class="login-header m-t-100">
 		<div class="header-wrap">
-			<div class="login-logo"><img src="../assets/img/login/login_logo.png" alt=""></div>
+			<div class="login-logo"><img src="assets/img/login/login_logo.png" alt=""></div>
 		</div>
 	</div>
 	<div class="login-content m-t-60">
@@ -42,9 +8,9 @@
 			<div class="fl">
 				<div class="swiper-container">
 				    <div class="swiper-wrapper">
-				        <div class="swiper-slide"><img src="../assets/img/login/login_img1.png" alt=""></div>
-				        <div class="swiper-slide"><img src="../assets/img/login/login_img2.png" alt=""></div>
-				        <div class="swiper-slide"><img src="../assets/img/login/login_img3.png" alt=""></div>
+				        <div class="swiper-slide"><img src="assets/img/login/login_img1.png" alt=""></div>
+				        <div class="swiper-slide"><img src="assets/img/login/login_img2.png" alt=""></div>
+				        <div class="swiper-slide"><img src="assets/img/login/login_img3.png" alt=""></div>
 				    </div>
 				    <!-- Add Pagination -->
 				    <div class="swiper-pagination"></div>
@@ -56,12 +22,15 @@
 
 			<!-- <div class="fl content-left"><img src="../assets/img/login/login_img1.png" alt=""></div> -->
 			<div class="fr content-right">
-				<form class="" action="">
+				<form class="" action="" id="form-login" name="login" role="form" novalidate>
 				<div class="formWrap">
 				    <h1>用户登录</h1>
-					<div class="input-wrap mt35"><input class="login-input" type="text" placeholder="用户名"></div>
-					<div class="input-wrap mt14"><input class="login-input" type="text" placeholder="密码"></div>
-					<div class="input-wrap mt35"><a class="loginBtn" href="../index.html">登录</a></div>
+				    <div class="input-wrap mt14" ng-show="showTip"><div class="validateTip"><span>用户名或密码不正确</span></div></div>
+					<div class="input-wrap mt35" ng-class="{ 'mt14' : fixInput}"><input name="username" class="login-input" type="text" placeholder="用户名" ng-model="user.username" required></div>
+					<div class="input-wrap mt14"><input name="password" class="login-input" type="password" placeholder="密码" ng-model="user.password" required></div>
+					 <!-- ui-sref="app.dashboard2" -->
+					<!-- <div class="input-wrap mt35"><a class="loginBtn" ng-click="signin()" ng-disabled="login.$invalid">登录</a></div> -->
+					<div class="input-wrap mt35"><button class="loginBtn" type="button" ng-click="signin()" ng-disabled="(login.username.$invalid && !login.username.$pristine) || (login.password.$invalid && !login.password.$pristine)">登录</button></div>
 				</div>
 				</form>
 			</div>
@@ -72,18 +41,3 @@
 			<span>Copyright © 1993-2017 <a class="foot-link" href="javascript:;">网管监控管理后台</a> - Powered By <a class="foot-link" href="javascript:;">博雅软件股份有限公司</a> V6.0</span>
 		</div>
 	</div>
-</body>
-<script type="text/javascript" src="../assets/plugins/swiper/swiper.min.js"></script>
-<script>
-	var swiper = new Swiper('.swiper-container', {
-	    pagination: '.swiper-pagination',
-	    nextButton: '.swiper-button-next',
-	    prevButton: '.swiper-button-prev',
-	    paginationClickable: true,
-	    spaceBetween: 30,
-	    centeredSlides: true,
-	    autoplay: 4000,
-	    autoplayDisableOnInteraction: false
-	});
-</script>
-</html>

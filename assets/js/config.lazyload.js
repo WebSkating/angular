@@ -266,9 +266,20 @@ angular.module('app')
                         'assets/css/style.css'
                   ]  
                 },{
+                  name: 'loginstyle',
+                  files: [
+                        'assets/css/login.css'
+                  ]  
+                },{
                   name: 'echarts',
                   files: [
                         'assets/plugins/echarts/echarts.min.js'
+                  ]  
+                },{
+                  name: 'swiper',
+                  files: [
+                        'assets/plugins/swiper/swiper.min.css',
+                        'assets/plugins/swiper/swiper.min.js'
                   ]  
                 }
 

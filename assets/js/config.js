@@ -9,13 +9,18 @@ angular.module('app')
         function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
             $urlRouterProvider
                 .otherwise('/app/dashboard2');
-
+            // $urlRouterProvider
+            //     .otherwise('/login');
             $stateProvider
                 .state('app', {
                     abstract: true,
                     url: "/app",
                     templateUrl: "tpl/app.html"
                 })
+                // .state('login', {
+                //     url: "/login",
+                //     templateUrl: "tpl/login.html"
+                // })
                 .state('app.dashboard2', {
                     url: "/dashboard2",
                     templateUrl: "tpl/dashboard2.html",
@@ -555,9 +560,31 @@ angular.module('app')
                     url: '/500',
                     templateUrl: 'tpl/extra_500.html'
                 })
+                // .state('access.login', {
+                //     url: '/login',
+                //     templateUrl: 'tpl/extra_login.html'
+                // })
                 .state('access.login', {
                     url: '/login',
-                    templateUrl: 'tpl/extra_login.html'
+                    templateUrl: 'tpl/login.html',
+                    controller: 'loginCtrl',
+                    resolve: {
+                        deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                            return $ocLazyLoad.load([
+                                    'swiper',
+                                    'basestyle',
+                                    'loginstyle'
+
+                                ], {
+                                    insertBefore: '#lazyload_placeholder'
+                                })
+                                .then(function() {
+                                    return $ocLazyLoad.load([
+                                        'assets/js/controllers/login.js'
+                                    ]);
+                                });
+                        }]
+                    }
                 })
                 .state('access.register', {
                     url: '/register',

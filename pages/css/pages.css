@@ -53,7 +53,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: #fafafa;
+  background-color: #ffffff;
   direction: ltr;
 }
 body.fixed-header .header {
