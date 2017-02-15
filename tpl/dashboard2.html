@@ -71,7 +71,11 @@
                     </div>
                 </div>
                 <ul class="panel-body warn-list">
-                    <li>
+                    <li ng-repeat="x in errorList">
+                        <div class="list-inner flex-box"><span class="te-error">VMware({{x.ip}})</span><span>{{x.time}}</span></div>
+                        <div class="list-inner"><span>{{x.info}}</span></div>
+                    </li>
+                    <!-- <li>
                         <div class="list-inner flex-box"><span class="te-error">VMware(81.16.147.1)</span><span>2017-01-03</span></div>
                         <div class="list-inner"><span>连续120秒磁盘利用率86.14%>70%</span></div>
                     </li>
@@ -82,11 +86,7 @@
                     <li>
                         <div class="list-inner flex-box"><span class="te-error">VMware(81.16.147.1)</span><span>2017-01-03</span></div>
                         <div class="list-inner"><span>连续120秒磁盘利用率86.14%>70%</span></div>
-                    </li>
-                    <li>
-                        <div class="list-inner flex-box"><span class="te-error">VMware(81.16.147.1)</span><span>2017-01-03</span></div>
-                        <div class="list-inner"><span>连续120秒磁盘利用率86.14%>70%</span></div>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </div>

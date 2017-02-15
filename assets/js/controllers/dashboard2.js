@@ -98,6 +98,23 @@ angular.module('app')
 
     	pannel1.setOption(option1);
         pannel2.setOption(option2);
+        $http({
+                method: "get",
+                url: "http://localhost:8080/angular/assets/js/api/serverList.json"
+              }).
+              success(function(data, status) {
+                if(data.status!=200){
+                    console.info(data.status);
+                }else{
+                    //控制器内跳转常用方法
+                    // $state.go('app.dashboard2');
+                    console.log(data.data.server_list);
+                    $scope.errorList = data.data.server_list;
+                }
+              }).
+              error(function(data, status) {
+                console.error(status);
+             });
         $scope.refreshTest = function(portlet) {
             console.log("Refreshing...");
             // Timeout to simulate AJAX response delay
