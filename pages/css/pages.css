@@ -1827,6 +1827,7 @@ body.rtl [class*="col-"] {
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
   position: relative;
+  border:0;
 }
 .panel .panel-heading {
   background: transparent;
@@ -2090,6 +2091,9 @@ body.rtl [class*="col-"] {
 }
 .portlet-icon-collapse:before {
   content: "\e62c";
+}
+.portlet-icon-minimize:before {
+  content: "\e630";
 }
 .portlet-icon-settings:before {
   content: "\e655";

@@ -1,6 +1,47 @@
 angular.module('app')
     // Chart controller 
     .controller('Dashboard2Ctrl', ['$scope', '$http', '$timeout', function($scope, $http, $timeout) {
+        // $scope.errorShowCard = true;
+        // $scope.errorShowList = false;
+        // $scope.showList = function(){
+        //     $scope.errorShowCard = false;
+        //     $scope.errorShowList = true;
+        // };
+        // $scope.hideList = function(){
+        //     $scope.errorShowCard = true;
+        //     $scope.errorShowList = false;
+        // };
+        $scope.shrink1 = '收起';
+        $scope.shrink2 = '收起';
+        $scope.shrink3 = '收起';
+        $scope.shrink4 = '收起';
+        $scope.toggle = function(shrink,n){
+            if(n==1){
+                if(shrink=='收起'){
+                    $scope.shrink1 = '更多';
+                }else{
+                    $scope.shrink1 = '收起';
+                }
+            }if(n==2){
+                if(shrink=='收起'){
+                    $scope.shrink2 = '更多';
+                }else{
+                    $scope.shrink2 = '收起';
+                }
+            }if(n==3){
+                if(shrink=='收起'){
+                    $scope.shrink3 = '更多';
+                }else{
+                    $scope.shrink3 = '收起';
+                }
+            }if(n==4){
+                if(shrink=='收起'){
+                    $scope.shrink4 = '更多';
+                }else{
+                    $scope.shrink4 = '收起';
+                }
+            }
+        };
     	var pannel1 = echarts.init(document.getElementById('mainPannel'));
         var pannel2 = echarts.init(document.getElementById('barPannel'));
     	option1 = {

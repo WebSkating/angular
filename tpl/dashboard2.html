@@ -11,10 +11,30 @@
                         <div class="warn-type">错误</div>
                     </div>
                 </div>
-                <div class="more mo-color-error">
-                    <div class="more-inner"><span class="more-text">更多</span><i class="warn-arrow"></i></div>
+                <!-- <div class="more mo-color-error">
+                    <div class="more-inner"><span class="more-text">更多</span>
+                        <a href="" data-toggle="collapse" class="portlet-collapse arrow-fix">
+                            <i class="portlet-icon portlet-icon-minimize"></i>
+                        </a>
+                    </div>
+                </div> -->
+                <div  pg-portlet class="panel warn-list-wrap  al-center" on-refresh="refreshTest('#portlet-basic')">
+                    <div class="warn-list-title mo-color-error">
+                        <div class="warn-title-inner"><span class="">{{shrink1}}</span>
+                            <a href="" data-toggle="collapse" class="portlet-collapse arrow-fix" ng-click="toggle(shrink1,1)">
+                            <i class="portlet-icon portlet-icon-collapse"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <ul class="panel-body warn-list error-border">
+                        <li ng-repeat="x in errorList">
+                            <div class="list-inner flex-box"><span class="te-error">VMware({{x.ip}})</span><span>{{x.time}}</span></div>
+                            <div class="list-inner"><span>{{x.info}}</span></div>
+                        </li>
+                    </ul>
                 </div>
             </div>
+
         </div>
         <div class="col-xs-3">
             <div class="info-card al-center th-warn">
@@ -25,8 +45,20 @@
                         <div class="warn-type">警告</div>
                     </div>
                 </div>
-                <div class="more mo-color-warn">
-                    <div class="more-inner"><span class="more-text">更多</span><i class="warn-arrow"></i></div>
+                <div  pg-portlet class="panel warn-list-wrap  al-center" on-refresh="refreshTest('#portlet-basic')">
+                    <div class="warn-list-title mo-color-warn">
+                        <div class="warn-title-inner"><span class="">{{shrink2}}</span>
+                            <a href="" data-toggle="collapse" class="portlet-collapse arrow-fix" ng-click="toggle(shrink2,2)">
+                            <i class="portlet-icon portlet-icon-collapse"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <ul class="panel-body warn-list warn-border">
+                        <li ng-repeat="x in errorList">
+                            <div class="list-inner flex-box"><span class="te-error">VMware({{x.ip}})</span><span>{{x.time}}</span></div>
+                            <div class="list-inner"><span>{{x.info}}</span></div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -39,10 +71,23 @@
                         <div class="warn-type">紧急</div>
                     </div>
                 </div>
-                <div class="more mo-color-urgent">
-                    <div class="more-inner"><span class="more-text">更多</span><i class="warn-arrow"></i></div>
+                <div  pg-portlet class="panel warn-list-wrap  al-center" on-refresh="refreshTest('#portlet-basic')">
+                    <div class="warn-list-title mo-color-urgent">
+                        <div class="warn-title-inner"><span class="">{{shrink3}}</span>
+                            <a href="" data-toggle="collapse" class="portlet-collapse arrow-fix" ng-click="toggle(shrink3,3)">
+                            <i class="portlet-icon portlet-icon-collapse"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <ul class="panel-body warn-list urgent-border">
+                        <li ng-repeat="x in errorList">
+                            <div class="list-inner flex-box"><span class="te-error">VMware({{x.ip}})</span><span>{{x.time}}</span></div>
+                            <div class="list-inner"><span>{{x.info}}</span></div>
+                        </li>
+                    </ul>
                 </div>
             </div>
+
         </div>
         <div class="col-xs-3">
             <div class="info-card al-center th-serious">
@@ -53,131 +98,31 @@
                         <div class="warn-type">严重</div>
                     </div>
                 </div>
-                <div class="more mo-color-serious">
-                    <div class="more-inner"><span class="more-text">更多</span><i class="warn-arrow"></i></div>
+                <!-- <div class="more mo-color-serious">
+                    <div class="more-inner"><span class="more-text">更多</span><a href="" data-toggle="collapse" class="portlet-collapse arrow-fix">
+                            <i class="portlet-icon portlet-icon-minimize"></i>
+                        </a></div>
+                </div> -->
+                <div  pg-portlet class="panel warn-list-wrap  al-center" on-refresh="refreshTest('#portlet-basic')">
+                    <div class="warn-list-title mo-color-serious">
+                        <div class="warn-title-inner"><span class="">{{shrink4}}</span>
+                            <a href="" data-toggle="collapse" class="portlet-collapse arrow-fix" ng-click="toggle(shrink4,4)">
+                            <i class="portlet-icon portlet-icon-collapse"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <ul class="panel-body warn-list serious-border">
+                        <li ng-repeat="x in errorList">
+                            <div class="list-inner flex-box"><span class="te-error">VMware({{x.ip}})</span><span>{{x.time}}</span></div>
+                            <div class="list-inner"><span>{{x.info}}</span></div>
+                        </li>
+                    </ul>
                 </div>
             </div>
+
         </div>
     </div>
     <!-- 告警列表 -->
-    <div class="row m-t-20">
-        <div class="col-xs-3">
-            <div pg-portlet class="panel panel-default warn-list-wrap  al-center error-border" on-refresh="refreshTest('#portlet-basic')">
-                <div class="warn-list-title  th-error">
-                    <div class="warn-title-inner"><span class="">错误</span>
-                        <a href="" data-toggle="collapse" class="portlet-collapse arrow-fix">
-                        <i class="portlet-icon portlet-icon-collapse"></i>
-                        </a>
-                    </div>
-                </div>
-                <ul class="panel-body warn-list">
-                    <li ng-repeat="x in errorList">
-                        <div class="list-inner flex-box"><span class="te-error">VMware({{x.ip}})</span><span>{{x.time}}</span></div>
-                        <div class="list-inner"><span>{{x.info}}</span></div>
-                    </li>
-                    <!-- <li>
-                        <div class="list-inner flex-box"><span class="te-error">VMware(81.16.147.1)</span><span>2017-01-03</span></div>
-                        <div class="list-inner"><span>连续120秒磁盘利用率86.14%>70%</span></div>
-                    </li>
-                    <li>
-                        <div class="list-inner flex-box"><span class="te-error">VMware(81.16.147.1)</span><span>2017-01-03</span></div>
-                        <div class="list-inner"><span>连续120秒磁盘利用率86.14%>70%</span></div>
-                    </li>
-                    <li>
-                        <div class="list-inner flex-box"><span class="te-error">VMware(81.16.147.1)</span><span>2017-01-03</span></div>
-                        <div class="list-inner"><span>连续120秒磁盘利用率86.14%>70%</span></div>
-                    </li> -->
-                </ul>
-            </div>
-        </div>
-        <div class="col-xs-3">
-            <div pg-portlet class="panel panel-default warn-list-wrap  al-center error-border" on-refresh="refreshTest('#portlet-basic')">
-                <div class="warn-list-title  th-warn">
-                    <div class="warn-title-inner"><span class="">警告</span>
-                        <a href="" data-toggle="collapse" class="portlet-collapse arrow-fix">
-                        <i class="portlet-icon portlet-icon-collapse"></i>
-                        </a>
-                    </div>
-                </div>
-                <ul class="panel-body warn-list">
-                    <li>
-                        <div class="list-inner flex-box"><span class="te-error">VMware(81.16.147.1)</span><span>2017-01-03</span></div>
-                        <div class="list-inner"><span>连续120秒磁盘利用率86.14%>70%</span></div>
-                    </li>
-                    <li>
-                        <div class="list-inner flex-box"><span class="te-error">VMware(81.16.147.1)</span><span>2017-01-03</span></div>
-                        <div class="list-inner"><span>连续120秒磁盘利用率86.14%>70%</span></div>
-                    </li>
-                    <li>
-                        <div class="list-inner flex-box"><span class="te-error">VMware(81.16.147.1)</span><span>2017-01-03</span></div>
-                        <div class="list-inner"><span>连续120秒磁盘利用率86.14%>70%</span></div>
-                    </li>
-                    <li>
-                        <div class="list-inner flex-box"><span class="te-error">VMware(81.16.147.1)</span><span>2017-01-03</span></div>
-                        <div class="list-inner"><span>连续120秒磁盘利用率86.14%>70%</span></div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="col-xs-3">
-            <div pg-portlet class="panel panel-default warn-list-wrap  al-center error-border" on-refresh="refreshTest('#portlet-basic')">
-                <div class="warn-list-title  th-urgent">
-                    <div class="warn-title-inner"><span class="">紧急</span>
-                        <a href="" data-toggle="collapse" class="portlet-collapse arrow-fix">
-                        <i class="portlet-icon portlet-icon-collapse"></i>
-                        </a>
-                    </div>
-                </div>
-                <ul class="panel-body warn-list">
-                    <li>
-                        <div class="list-inner flex-box"><span class="te-error">VMware(81.16.147.1)</span><span>2017-01-03</span></div>
-                        <div class="list-inner"><span>连续120秒磁盘利用率86.14%>70%</span></div>
-                    </li>
-                    <li>
-                        <div class="list-inner flex-box"><span class="te-error">VMware(81.16.147.1)</span><span>2017-01-03</span></div>
-                        <div class="list-inner"><span>连续120秒磁盘利用率86.14%>70%</span></div>
-                    </li>
-                    <li>
-                        <div class="list-inner flex-box"><span class="te-error">VMware(81.16.147.1)</span><span>2017-01-03</span></div>
-                        <div class="list-inner"><span>连续120秒磁盘利用率86.14%>70%</span></div>
-                    </li>
-                    <li>
-                        <div class="list-inner flex-box"><span class="te-error">VMware(81.16.147.1)</span><span>2017-01-03</span></div>
-                        <div class="list-inner"><span>连续120秒磁盘利用率86.14%>70%</span></div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="col-xs-3">
-            <div pg-portlet class="panel panel-default warn-list-wrap  al-center error-border" on-refresh="refreshTest('#portlet-basic')">
-                <div class="warn-list-title  th-serious">
-                    <div class="warn-title-inner"><span class="">严重</span>
-                        <a href="" data-toggle="collapse" class="portlet-collapse arrow-fix">
-                        <i class="portlet-icon portlet-icon-collapse"></i>
-                        </a>
-                    </div>
-                </div>
-                <ul class="panel-body warn-list">
-                    <li>
-                        <div class="list-inner flex-box"><span class="te-error">VMware(81.16.147.1)</span><span>2017-01-03</span></div>
-                        <div class="list-inner"><span>连续120秒磁盘利用率86.14%>70%</span></div>
-                    </li>
-                    <li>
-                        <div class="list-inner flex-box"><span class="te-error">VMware(81.16.147.1)</span><span>2017-01-03</span></div>
-                        <div class="list-inner"><span>连续120秒磁盘利用率86.14%>70%</span></div>
-                    </li>
-                    <li>
-                        <div class="list-inner flex-box"><span class="te-error">VMware(81.16.147.1)</span><span>2017-01-03</span></div>
-                        <div class="list-inner"><span>连续120秒磁盘利用率86.14%>70%</span></div>
-                    </li>
-                    <li>
-                        <div class="list-inner flex-box"><span class="te-error">VMware(81.16.147.1)</span><span>2017-01-03</span></div>
-                        <div class="list-inner"><span>连续120秒磁盘利用率86.14%>70%</span></div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
     <div class="wrap-main">
         <!-- 饼图 -->
         <div class="wrap-l fl">
