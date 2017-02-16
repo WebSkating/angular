@@ -44,59 +44,46 @@ angular.module('app')
         };
     	var pannel1 = echarts.init(document.getElementById('mainPannel'));
         var pannel2 = echarts.init(document.getElementById('barPannel'));
-    	option1 = {
+    	var option1 = {
             title: {
                 text: '资源'
             },
-    	    tooltip: {
-    	        trigger: 'item',
-    	        formatter: "{a} <br/>{b}: {c} ({d}%)"
-    	    },
-    	    legend: {
-    	        orient: 'vertical',
-    	        x: 'left',
+            tooltip: {
+                trigger: 'item',
+                formatter: "{a} <br/>{b}: {c} ({d}%)"
+            },
+            legend: {
+                orient: 'vertical',
+                x: 'left',
                 y:40,
-    	        data: ['pc服务器', '小型机', '服务器', 'san存储', '刀片服务器', '带库', '百度', '交换机', '负载均衡', '其他']
-    	    },
-    	    series: [{
-    	        name: '访问来源',
-    	        type: 'pie',
-    	        selectedMode: 'single',
-    	        radius: [0, '30%'],
+                data: []
+            },
+            series: [{
+                name: '访问来源',
+                type: 'pie',
+                selectedMode: 'single',
+                radius: [0, '30%'],
 
-    	        label: {
-    	            normal: {
-    	                position: 'inner'
-    	            }
-    	        },
-    	        labelLine: {
-    	            normal: {
-    	                show: false
-    	            }
-    	        },
-    	        data: [
-    	            { value: 335, name: '未知设备', selected: true },
-    	            { value: 679, name: '网络设备' },
-    	            { value: 1548, name: '服务设备' }
-    	        ]
-    	    }, {
-    	        name: '访问来源',
-    	        type: 'pie',
-    	        radius: ['40%', '55%'],
+                label: {
+                    normal: {
+                        position: 'inner'
+                    }
+                },
+                labelLine: {
+                    normal: {
+                        show: false
+                    }
+                },
+                data: []
+            }, {
+                name: '访问来源',
+                type: 'pie',
+                radius: ['40%', '55%'],
 
-    	        data: [
-    	            { value: 335, name: '负载均衡' },
-    	            { value: 310, name: '交换机' },
-    	            { value: 234, name: '带库' },
-    	            { value: 135, name: '刀片服务器' },
-    	            { value: 1048, name: 'san存储' },
-    	            { value: 251, name: '服务器' },
-    	            { value: 147, name: '小型机' },
-    	            { value: 102, name: 'pc服务器' }
-    	        ]
-    	    }]
-    	};
-        option2 = {
+                data: []
+            }]
+        };
+        var option2 = {
             color: ['#3398DB'],
             title: {
                 text: '事件发生类型Top5排名'
@@ -129,7 +116,7 @@ angular.module('app')
             ],
             series : [
                 {
-                    name:'直接访问',
+                    name:'事件',
                     type:'bar',
                     barWidth: '60%',
                     data:[10, 25, 50, 75, 90]
@@ -137,33 +124,63 @@ angular.module('app')
             ]
         };
 
-    	pannel1.setOption(option1);
-        pannel2.setOption(option2);
+    	
+        // 告警数据列表
         $http({
-                method: "get",
-                url: "http://localhost:8080/angular/assets/js/api/serverList.json"
-              }).
-              success(function(data, status) {
-                if(data.status!=200){
-                    console.info(data.status);
-                }else{
-                    //控制器内跳转常用方法
-                    // $state.go('app.dashboard2');
-                    console.log(data.data.server_list);
-                    $scope.errorList = data.data.server_list;
-                }
-              }).
-              error(function(data, status) {
-                console.error(status);
-             });
-        $scope.refreshTest = function(portlet) {
-            console.log("Refreshing...");
-            // Timeout to simulate AJAX response delay
-            $timeout(function() {
-                $(portlet).portlet({
-                    refresh: false
-                });
-            }, 2000);
+            method: "get",
+            url: "http://localhost:8080/angular/assets/js/api/serverList.json"
+          }).
+          success(function(data, status) {
+            if(data.status!=200){
+                console.info(data.status);
+            }else{
+                $scope.errorNum = data.data.errorData.errorNum;
+                $scope.warnNum = data.data.warnData.warnNum;
+                $scope.urgentNum = data.data.urgentData.urgentNum;
+                $scope.seriousNum = data.data.seriousData.seriousNum;
 
-        }
+                $scope.errorList = data.data.errorData.errorList;
+                $scope.warnList = data.data.warnData.warnList;
+                $scope.urgentList = data.data.urgentData.urgentList;
+                $scope.seriousList = data.data.seriousData.seriousList;
+            }
+          }).
+          error(function(data, status) {
+            console.error(status);
+         });
+        // 饼状图
+        $http({
+            method: "get",
+            url: "http://localhost:8080/angular/assets/js/api/pie.json"
+          }).
+          success(function(data, status) {
+            if(data.status!=200){
+                console.info(data.status);
+            }else{
+                option1.legend.data = data.data.legend;
+                option1.series[0].data = data.data.level1;
+                option1.series[1].data = data.data.level2;
+                pannel1.setOption(option1);
+            }
+          }).
+          error(function(data, status) {
+            console.error(status);
+         });
+        // 条形图
+        $http({
+          method: "get",
+          url: "http://localhost:8080/angular/assets/js/api/pie.json"
+        }).
+        success(function(data, status) {
+          if(data.status!=200){
+              console.info(data.status);
+          }else{
+              option2.xAxis.data = data.data.xAxis;
+              option2.series.data = data.data.series;
+              pannel2.setOption(option2);
+          }
+        }).
+        error(function(data, status) {
+          console.error(status);
+       });
     }]);

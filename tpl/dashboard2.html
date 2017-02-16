@@ -7,7 +7,7 @@
                 <div class="card-inner">
                     <i class="error-icon fl"></i>
                     <div class="warn-detail fr">
-                        <div class="warn-num">24</div>
+                        <div class="warn-num">{{errorNum}}</div>
                         <div class="warn-type">错误</div>
                     </div>
                 </div>
@@ -28,7 +28,7 @@
                     </div>
                     <ul class="panel-body warn-list error-border">
                         <li ng-repeat="x in errorList">
-                            <div class="list-inner flex-box"><span class="te-error">VMware({{x.ip}})</span><span>{{x.time}}</span></div>
+                            <div class="list-inner flex-box"><span class="te-error">{{x.ip}}</span><span>{{x.time.substr(0,10)}}</span></div>
                             <div class="list-inner"><span>{{x.info}}</span></div>
                         </li>
                     </ul>
@@ -41,7 +41,7 @@
                 <div class="card-inner">
                     <i class="warn-icon fl"></i>
                     <div class="warn-detail fr">
-                        <div class="warn-num">24</div>
+                        <div class="warn-num">{{warnNum}}</div>
                         <div class="warn-type">警告</div>
                     </div>
                 </div>
@@ -54,8 +54,8 @@
                         </div>
                     </div>
                     <ul class="panel-body warn-list warn-border">
-                        <li ng-repeat="x in errorList">
-                            <div class="list-inner flex-box"><span class="te-error">VMware({{x.ip}})</span><span>{{x.time}}</span></div>
+                        <li ng-repeat="x in warnList">
+                            <div class="list-inner flex-box"><span class="te-error">{{x.ip}}</span><span>{{x.time.substr(0,10)}}</span></div>
                             <div class="list-inner"><span>{{x.info}}</span></div>
                         </li>
                     </ul>
@@ -67,7 +67,7 @@
                 <div class="card-inner">
                     <i class="urgent-icon fl"></i>
                     <div class="warn-detail fr">
-                        <div class="warn-num">24</div>
+                        <div class="warn-num">{{urgentNum}}</div>
                         <div class="warn-type">紧急</div>
                     </div>
                 </div>
@@ -80,8 +80,8 @@
                         </div>
                     </div>
                     <ul class="panel-body warn-list urgent-border">
-                        <li ng-repeat="x in errorList">
-                            <div class="list-inner flex-box"><span class="te-error">VMware({{x.ip}})</span><span>{{x.time}}</span></div>
+                        <li ng-repeat="x in urgentList">
+                            <div class="list-inner flex-box"><span class="te-error">{{x.ip}}</span><span>{{x.time.substr(0,10)}}</span></div>
                             <div class="list-inner"><span>{{x.info}}</span></div>
                         </li>
                     </ul>
@@ -94,7 +94,7 @@
                 <div class="card-inner">
                     <i class="serious-icon fl"></i>
                     <div class="warn-detail fr">
-                        <div class="warn-num">24</div>
+                        <div class="warn-num">{{seriousNum}}</div>
                         <div class="warn-type">严重</div>
                     </div>
                 </div>
@@ -112,8 +112,8 @@
                         </div>
                     </div>
                     <ul class="panel-body warn-list serious-border">
-                        <li ng-repeat="x in errorList">
-                            <div class="list-inner flex-box"><span class="te-error">VMware({{x.ip}})</span><span>{{x.time}}</span></div>
+                        <li ng-repeat="x in seriousList">
+                            <div class="list-inner flex-box"><span class="te-error">{{x.ip}}</span><span>{{x.time.substr(0,10)}}</span></div>
                             <div class="list-inner"><span>{{x.info}}</span></div>
                         </li>
                     </ul>
