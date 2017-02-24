@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/nms/!svn/ver/256/trunk/web/nms/tpl/blocks
+END
+footer.html
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/nms/!svn/ver/248/trunk/web/nms/tpl/blocks/footer.html
+END
+jumbotron.html
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/nms/!svn/ver/248/trunk/web/nms/tpl/blocks/jumbotron.html
+END
+modals.html
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/nms/!svn/ver/248/trunk/web/nms/tpl/blocks/modals.html
+END
+builder_content.html
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/nms/!svn/ver/248/trunk/web/nms/tpl/blocks/builder_content.html
+END
+builder_options.html
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/nms/!svn/ver/248/trunk/web/nms/tpl/blocks/builder_options.html
+END
+quick_search.html
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/nms/!svn/ver/248/trunk/web/nms/tpl/blocks/quick_search.html
+END
+quick_view.html
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/nms/!svn/ver/248/trunk/web/nms/tpl/blocks/quick_view.html
+END
+blank.html
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/nms/!svn/ver/248/trunk/web/nms/tpl/blocks/blank.html
+END
+header.html
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/nms/!svn/ver/255/trunk/web/nms/tpl/blocks/header.html
+END
+sidebar.html
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/nms/!svn/ver/263/trunk/web/nms/tpl/blocks/sidebar.html
+END

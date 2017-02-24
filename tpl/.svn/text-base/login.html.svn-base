@@ -1,0 +1,43 @@
+<div class="login-header m-t-100">
+		<div class="header-wrap">
+			<div class="login-logo"><img src="assets/img/login/login_logo.png" alt=""></div>
+		</div>
+	</div>
+	<div class="login-content m-t-60">
+		<div class="content-wrap">
+			<div class="fl">
+				<div class="swiper-container">
+				    <div class="swiper-wrapper">
+				        <div class="swiper-slide"><img src="assets/img/login/login_img1.png" alt=""></div>
+				        <div class="swiper-slide"><img src="assets/img/login/login_img2.png" alt=""></div>
+				        <div class="swiper-slide"><img src="assets/img/login/login_img3.png" alt=""></div>
+				    </div>
+				    <!-- Add Pagination -->
+				    <div class="swiper-pagination"></div>
+				    <!-- Add Arrows -->
+				    <div class="swiper-button-next"></div>
+				    <div class="swiper-button-prev"></div>
+				</div>
+			</div>
+
+			<!-- <div class="fl content-left"><img src="../assets/img/login/login_img1.png" alt=""></div> -->
+			<div class="fr content-right">
+				<form class="" action="" id="form-login" name="login" role="form" novalidate>
+				<div class="formWrap">
+				    <h1>用户登录</h1>
+				    <div class="input-wrap mt14" ng-show="showTip"><div class="validateTip"><span>用户名或密码不正确</span></div></div>
+					<div class="input-wrap mt35" ng-class="{ 'mt14' : fixInput}"><input name="username" class="login-input" type="text" placeholder="用户名" ng-model="user.username" required></div>
+					<div class="input-wrap mt14"><input name="password" class="login-input" type="password" placeholder="密码" ng-model="user.password" required></div>
+					 <!-- ui-sref="app.dashboard2" -->
+					<!-- <div class="input-wrap mt35"><a class="loginBtn" ng-click="signin()" ng-disabled="login.$invalid">登录</a></div> -->
+					<div class="input-wrap mt35"><button class="loginBtn" type="button" ng-click="signin()" ng-disabled="(login.username.$invalid && !login.username.$pristine) || (login.password.$invalid && !login.password.$pristine)">登录</button></div>
+				</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="login-footer">
+		<div class="footer-wrap">
+			<span>Copyright © 1993-2017 <a class="foot-link" href="javascript:;">网管监控管理后台</a> - Powered By <a class="foot-link" href="javascript:;">博雅软件股份有限公司</a> V6.0</span>
+		</div>
+	</div>

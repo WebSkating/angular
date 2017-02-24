@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/nms/!svn/ver/248/trunk/web/nms/assets/plugins
+END
+sly.min.js
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/nms/!svn/ver/248/trunk/web/nms/assets/plugins/sly.min.js
+END
+jquery.sieve.min.js
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/nms/!svn/ver/248/trunk/web/nms/assets/plugins/jquery.sieve.min.js
+END
+hammer.min.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/nms/!svn/ver/248/trunk/web/nms/assets/plugins/hammer.min.js
+END
+hammer.min.map
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/nms/!svn/ver/248/trunk/web/nms/assets/plugins/hammer.min.map
+END
+animate.min.css
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/nms/!svn/ver/248/trunk/web/nms/assets/plugins/animate.min.css
+END
+modernizr.custom.js
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/nms/!svn/ver/248/trunk/web/nms/assets/plugins/modernizr.custom.js
+END

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/nms/!svn/ver/248/trunk/web/nms/tpl/apps/email
+END
+email_compose.html
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/nms/!svn/ver/248/trunk/web/nms/tpl/apps/email/email_compose.html
+END
+email_inbox.html
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/nms/!svn/ver/248/trunk/web/nms/tpl/apps/email/email_inbox.html
+END
+email.html
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/nms/!svn/ver/248/trunk/web/nms/tpl/apps/email/email.html
+END

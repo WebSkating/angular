@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/nms/!svn/ver/248/trunk/web/nms/assets/plugins/bootstrap-typehead
+END
+typeahead.jquery.min.js
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/nms/!svn/ver/248/trunk/web/nms/assets/plugins/bootstrap-typehead/typeahead.jquery.min.js
+END
+typeahead.bundle.min.js
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/nms/!svn/ver/248/trunk/web/nms/assets/plugins/bootstrap-typehead/typeahead.bundle.min.js
+END
+bloodhound.min.js
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/nms/!svn/ver/248/trunk/web/nms/assets/plugins/bootstrap-typehead/bloodhound.min.js
+END
